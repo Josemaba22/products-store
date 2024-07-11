@@ -1,0 +1,26 @@
+.container-icon:hover {
+    cursor: pointer;
+    background-color: #ccc;
+    /* Usa box-shadow para crear un efecto de contorno esférico */
+    box-shadow: 0 0 0 1px #ccc; 
+}
+
+input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.container-icon {
+    border-radius: 100%;
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}

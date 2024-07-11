@@ -1,0 +1,25 @@
+li {
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+    padding: 20px;
+    margin: 5px;
+    color: white;
+}
+
+a:hover {
+    background-color: #273;
+    color: white;
+    border-radius: 5pc;
+}
+
+ul {
+    color: white;
+    height: 80px;
+}
+
+nav {
+    background-color: #0b6;
+}

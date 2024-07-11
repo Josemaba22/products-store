@@ -1,0 +1,22 @@
+<app-nav></app-nav>
+<app-search></app-search>
+<main>
+    <!-- <section class="card-container">
+        <div *ngFor="let product of products | pageable:currentPage:pageSize" class="card">
+            <app-card-product  [product]="product"></app-card-product>
+        </div>
+    </section> -->
+    <ng-template *ngIf="products.length > 0">
+        <section class="card-container">
+            <div *ngFor="let product of products$ | async | pageable:currentPage:pageSize" class="card">
+                <app-card-product  [product]="product"></app-card-product>
+            </div>
+        </section>
+    </ng-template>
+
+    <section class="pageable flexrow">
+        <button class="btn" (click)="previousPage()">Previous</button>
+        <span>{{currentPage+1}} de {{totalPages}}</span>
+        <button class="btn" (click)="nextPage()">Next</button>
+    </section>
+</main>
