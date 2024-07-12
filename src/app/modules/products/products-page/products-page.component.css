@@ -3,6 +3,7 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around; 
+    height: 70vh;
 } 
 
 .card {
@@ -12,6 +13,24 @@
 
 @media (max-width: 657px) {
     .card {
-        width: 80%;
+        width: 100%;
     }
+}
+
+.btn {
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(53, 186, 248);
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background-color: rgb(34, 112, 255);
+}
+
+.pageable {
+    height: 10vh;
+    background-color: antiquewhite;
 }

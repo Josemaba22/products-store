@@ -13,6 +13,9 @@ import { Observable } from 'rxjs';
 export class ProductsPageComponent implements OnInit {
 
   products: Product[] = [];
+  page: number = 0;
+  size: number = 3;
+  totalPages: number = 0;
 
   constructor(private productsService: ProductsService) {
   }
@@ -22,10 +25,11 @@ export class ProductsPageComponent implements OnInit {
   }
 
   private getAllProducts(): void {
-    this.productsService.getAllProducts().subscribe({
+    this.productsService.getAllProducts(this.page, this.size).subscribe({
       next: (response: any) => {
-        const { content } = response;
+        const { content, totalPages } = response;
         this.products = content;
+        this.totalPages = totalPages;
       },
       error: (error) => {
         console.error(error);
@@ -34,11 +38,17 @@ export class ProductsPageComponent implements OnInit {
   }
 
   public nextPage(): void {
-
+    if( this.page < this.totalPages - 1) {
+      this.page++;
+      this.getAllProducts();
+    }
   }
 
   public previousPage(): void {
-
+    if( this.page > 0) {
+      this.page--;
+      this.getAllProducts();
+    }
   }
 
 }

@@ -8,8 +8,8 @@
     </section>
 
     <section class="pageable flexrow">
-        <button class="btn" (click)="previousPage()">Previous</button>
-        <span>{{'Pagina 1'}} de {{' 2 Pagina(s)'}}</span>
-        <button class="btn" (click)="nextPage()">Next</button>
+        <button class="btn" (click)="previousPage()">{{'<'}}</button>&nbsp;
+        <span>{{page+1}} de {{totalPages}}</span>&nbsp;
+        <button class="btn" (click)="nextPage()">{{'>'}}</button>
     </section>
 </main>
