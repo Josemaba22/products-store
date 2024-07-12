@@ -10,51 +10,35 @@ import { Observable } from 'rxjs';
 })
 
 
-export class ProductsPageComponent implements OnInit{
+export class ProductsPageComponent implements OnInit {
 
   products: Product[] = [];
-  currentPage: number = 0;
-  totalPages: number = 0;
-  pageSize: number = 3;
-  products$?: Observable<ProductsResponse> | [] ;
 
   constructor(private productsService: ProductsService) {
-
-    
   }
-  
+
   ngOnInit(): void {
-    this.getAllProducts(this.currentPage, this.pageSize);
+    this.getAllProducts();
   }
 
-  private getAllProducts(page: number, size: number): void {
-    // this.productsService.getAllProducts(page, size).subscribe({
-    //   next: (response: PageProductResponse) => {
-    //     console.log(response.content);
-    //     const { content, totalPages } = response;
-    //     this.products = content;
-    //     this.totalPages = totalPages;
-    //   },
-    //   error: error => {
-    //     console.error(error);
-    //   }
-    // })
-
-    this.products$ = this.productsService.getAllProducts(page, size);
+  private getAllProducts(): void {
+    this.productsService.getAllProducts().subscribe({
+      next: (response: any) => {
+        const { content } = response;
+        this.products = content;
+      },
+      error: (error) => {
+        console.error(error);
+      }
+    });
   }
 
-  nextPage(): void {
-    if(this.currentPage < this.totalPages - 1){
-      this.currentPage++;
-      this.getAllProducts(this.currentPage, this.pageSize);
-    }
+  public nextPage(): void {
+
   }
 
-  previousPage(): void {
-    if(this.currentPage > 0){
-      this.currentPage--;
-      this.getAllProducts(this.currentPage, this.pageSize);
-    }
+  public previousPage(): void {
+
   }
-  
+
 }

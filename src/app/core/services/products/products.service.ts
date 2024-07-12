@@ -11,11 +11,15 @@ export class ProductsService {
 
   baseURL = environment.apiProducts;
 
-  constructor( private http: HttpClient ) { }
+  constructor(private http: HttpClient) { }
 
-  getAllProducts( page: number, size: number): Observable<PageProductResponse> {
-    return this.http.get<PageProductResponse>(`${this.baseURL}/product/get-all?page=${page}&size=${size}`)
+  getAllProducts(): Observable<PageProductResponse> {
+    return this.http.get<PageProductResponse>(`${this.baseURL}/product/get-all`)
   }
+
+  // getAllProducts(): Observable<PageProductResponse> {
+  //   return this.http.get<PageProductResponse>(`${this.baseURL}/product/get-all`)
+  // }
 
   getHelloWorld(): Observable<any> {
     return this.http.get<any>(`${this.baseURL}/hello-world`)
