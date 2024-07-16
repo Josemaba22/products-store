@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavComponent } from './components/nav/nav.component-page';
 import { CardProductComponent } from './components/card-product/card-product-page.component';
 import { SearchComponent } from './components/search/search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,6 +14,8 @@ import { SearchComponent } from './components/search/search.component';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     NavComponent,

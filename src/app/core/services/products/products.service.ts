@@ -21,4 +21,13 @@ export class ProductsService {
     return this.http.get<any>(`${this.baseURL}/hello-world`)
   }
 
+  searchProductFilterPageable(page: number, size: number, products: string): Observable<PageProductResponse> {
+    return this.http.get<PageProductResponse>(`${this.baseURL}/product/search?name=${products}&page=${page}&size=${size}`)
+  }
+
+  searchProduct(page: number, size: number, products: string): Observable<PageProductResponse> {
+    return this.http.get<any>(`${this.baseURL}/product/search?page=${page}&size=${size}&name=${products}`)
+  }
+
+
 }

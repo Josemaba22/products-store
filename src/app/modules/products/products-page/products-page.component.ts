@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 export class ProductsPageComponent implements OnInit {
 
   products: Product[] = [];
+  searchTerm: string = '';
   page: number = 0;
   size: number = 3;
   totalPages: number = 0;
@@ -25,7 +26,7 @@ export class ProductsPageComponent implements OnInit {
   }
 
   private getAllProducts(): void {
-    this.productsService.getAllProducts(this.page, this.size).subscribe({
+    this.productsService.searchProduct(this.page, this.size, this.searchTerm).subscribe({
       next: (response: any) => {
         const { content, totalPages } = response;
         this.products = content;
@@ -49,6 +50,12 @@ export class ProductsPageComponent implements OnInit {
       this.page--;
       this.getAllProducts();
     }
+  }
+
+  public searchProduct(searchTerm: string): void {
+    console.log(searchTerm);
+    this.searchTerm = searchTerm;
+    this.getAllProducts();
   }
 
 }

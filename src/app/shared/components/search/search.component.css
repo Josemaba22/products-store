@@ -6,10 +6,10 @@
 }
 
 input {
-    padding: 10px;
     width: 300px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    padding: 10px;
 }
 
 .container-icon {
@@ -27,4 +27,40 @@ input {
 
 main {
     height: 10vh;
+}
+
+
+
+/* Estilos para el contenedor */
+.dropdown-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ajusta al ancho deseado */
+}
+
+/* Actualiza los estilos del dropdown */
+.dropdown {
+    position: absolute;
+    left: 0;
+    width: auto; /* Asegura que el dropdown tenga el mismo ancho que el input */
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 100;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown ul li:hover {
+    background-color: #f0f0f0;
 }

@@ -1,9 +1,14 @@
 <app-nav></app-nav>
-<app-search></app-search>
+<app-search (search)="searchProduct($event)"></app-search>
 <main>
     <section class="card-container">
         <div *ngFor="let product of products" class="card">
             <app-card-product [product]="product"></app-card-product>
+        </div>
+        <div *ngIf="">
+            <div *ngFor="let product of products" class="card">
+                <app-card-product [product]="product"></app-card-product>
+            </div>
         </div>
     </section>
 
