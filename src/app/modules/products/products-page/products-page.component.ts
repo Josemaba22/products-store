@@ -55,6 +55,7 @@ export class ProductsPageComponent implements OnInit {
   public searchProduct(searchTerm: string): void {
     console.log(searchTerm);
     this.searchTerm = searchTerm;
+    this.page = 0;
     this.getAllProducts();
   }
 

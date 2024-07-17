@@ -8,8 +8,8 @@
   </div> -->
     <div class="dropdown-container">
         <div class="flexrow">
-            <input type="text" (keyup)="updateSuggestions($event)" [(ngModel)]="searchTerm">
-            <div class="container-icon">
+            <input type="text" (keyup)="updateSuggestions($event)" [(ngModel)]="searchTerm" placeholder="Search...">
+            <div class="container-icon" (click)="clickSuggestions()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                     viewBox="0 0 16 16">
                     <path
