@@ -43,11 +43,13 @@ main {
 /* Actualiza los estilos del dropdown */
 .dropdown {
     position: absolute;
-    left: 0;
-    width: auto; /* Asegura que el dropdown tenga el mismo ancho que el input */
     background-color: white;
     border: 1px solid #ddd;
     z-index: 100;
+    top: 16.5%;
+    left: 45%;
+    transform: translateX(-50%);
+    width: 300px;
 }
 
 .dropdown ul {

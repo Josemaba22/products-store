@@ -1,32 +1,50 @@
-/* 
-
-section {
-    padding: 10px;
-}
-
-h2 {
-    color: rgb(34, 112, 255);
-    padding: 10px;
-    background-color: rgb(211, 211, 211);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.card-product {
-    margin: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-} */
 .card {
-    margin: 10px;
     width: auto;
     height: auto;
-    padding: .8em;
-    background: #f5f5f5;
-    position: relative;
     overflow: visible;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-   }
+}
 
-   
+.text-title {
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+.paycard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(253, 253, 216);
+    padding: 10px;
+    align-items: center;
+}
+
+p {
+    margin: 10px;
+    padding: 0;
+}
+
+.btn-add {
+    background-color: #ffe4c4;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background-color: rgb(255, 184, 103);
+}
+
+.img-container {
+    padding: 10px;
+}
+
+.img-product {
+    width: 200px;
+    height: 200px;
+    background-color: #ffe4c4;
+}

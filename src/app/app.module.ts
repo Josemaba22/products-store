@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductsService } from '@core/services/products/products.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PageablePipe } from './core/pipes/pageable.pipe';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PageablePipe } from './core/pipes/pageable.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [
     provideClientHydration()

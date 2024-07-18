@@ -4,6 +4,7 @@ import { NavComponent } from './components/nav/nav.component-page';
 import { CardProductComponent } from './components/card-product/card-product-page.component';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
     NavComponent,

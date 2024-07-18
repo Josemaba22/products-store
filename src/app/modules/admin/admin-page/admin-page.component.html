@@ -1,0 +1,30 @@
+<app-search (search)="searchProduct($event)"></app-search>
+<main>
+    <!-- crea una tabla de products -->
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- recorre la lista de products -->
+            <tr *ngFor="let product of products">
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <!-- crea un boton para editar el product -->
+                    <button (click)="editProduct(product)" class="btn-edit">Edit</button>
+                    <!-- crea un boton para eliminar el product -->
+                    <button (click)="deleteProduct(product.id)" class="btn-delete">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>

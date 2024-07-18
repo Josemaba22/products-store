@@ -13,6 +13,7 @@ a:hover {
     background-color: #273;
     color: white;
     border-radius: 5pc;
+    cursor: pointer;
 }
 
 ul {
@@ -23,3 +24,5 @@ ul {
 nav {
     background-color: #0b6;
 }
+
+

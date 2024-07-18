@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PageProductResponse } from '@core/models/product';
+import { PageProductResponse, Product } from '@core/models/product';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
@@ -27,6 +27,10 @@ export class ProductsService {
 
   searchProduct(page: number, size: number, products: string): Observable<PageProductResponse> {
     return this.http.get<any>(`${this.baseURL}/product/search?page=${page}&size=${size}&name=${products}`)
+  }
+
+  deleteProduct(id: number): Observable<Product> {
+    return this.http.delete<Product>(`${this.baseURL}/product/delete/${id}`)
   }
 
 
